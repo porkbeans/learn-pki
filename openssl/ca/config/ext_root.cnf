@@ -1,0 +1,4 @@
+[v3_ext]
+basicConstraints        = critical,CA:TRUE,pathlen:0
+subjectKeyIdentifier    = hash
+keyUsage                = critical,keyCertSign,cRLSign

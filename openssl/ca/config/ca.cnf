@@ -1,0 +1,28 @@
+[ca]
+default_ca = CA_default
+
+[CA_default]
+dir             = /opt/messyzone/pki/CA/${ENV::OPENSSL_CA_NAME}
+private_key     = $dir/ca.key
+certificate     = $dir/ca.crt
+serial          = $dir/ca.srl
+database        = $dir/index.txt
+new_certs_dir   = $dir/certs
+
+rand_serial     = yes
+policy          = policy_default
+unique_subject  = no
+copy_extensions = copy
+name_opt        = oneline
+cert_opt        = ca_default
+
+default_days    = 365
+default_md      = sha512
+
+[policy_default]
+countryName             = optional
+stateOrProvinceName     = optional
+organizationName        = match
+organizationalUnitName  = optional
+commonName              = supplied
+emailAddress            = optional
